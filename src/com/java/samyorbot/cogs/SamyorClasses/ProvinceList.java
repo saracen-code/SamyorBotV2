@@ -1,4 +1,4 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 
 public class ProvinceList {
     private Country country;

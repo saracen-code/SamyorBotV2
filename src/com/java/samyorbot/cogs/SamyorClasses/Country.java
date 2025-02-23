@@ -1,4 +1,4 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 
 public class Country {
     public static int GLOBAL_YEAR;

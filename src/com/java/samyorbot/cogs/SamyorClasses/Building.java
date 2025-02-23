@@ -1,4 +1,4 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 
 import java.util.List;
 import java.util.ArrayList;

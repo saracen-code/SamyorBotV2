@@ -1,4 +1,4 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 
 public class Taxes {
     private static int[] PROBLEMATIC_VALUES = {30, 30, 20, 12, 20, 4000};

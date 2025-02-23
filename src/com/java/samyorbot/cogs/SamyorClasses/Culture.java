@@ -1,4 +1,4 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.nio.file.Files;

@@ -1,7 +1,5 @@
-package SamyorClasses;
+package samyorbot.cogs.SamyorClasses;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
 
 // Domain class managing buildings
