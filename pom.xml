@@ -24,18 +24,33 @@
             <version>20210307</version>
         </dependency>
 
-        <!-- JDA (Java Discord API) Dependency -->
-        <dependency>
-            <groupId>net.dv8tion</groupId>
-            <artifactId>JDA</artifactId>
-            <version>5.3.0</version> <!-- Latest stable version -->
-        </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
         </dependency>
+
+        <!-- JDA -->
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>5.0.0-beta.1</version> <!-- Make sure this matches your JDA version -->
+        </dependency>
+
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.0-alpha1</version> <!-- You can choose a stable version if you prefer -->
+        </dependency>
+
+        <!-- Logback Classic (Logging provider) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.10</version> <!-- Latest stable version -->
+        </dependency>
+
 
     </dependencies>
 </project>
