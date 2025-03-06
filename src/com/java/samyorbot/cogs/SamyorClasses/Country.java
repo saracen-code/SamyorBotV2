@@ -17,6 +17,8 @@ public class Country {
     private City capital;
     private ProvinceList provinceList;
     private King king;
+    // provincelist
+
 
     // Spheres
     private Diplomacy diplomacy;

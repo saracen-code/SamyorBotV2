@@ -6,6 +6,8 @@ import java.util.Random;
 public class Character {
     private static double BASE_HEALTH = 15;
     private int transportSupplies = 5000;
+    public Affiliation affiliation; // dynasty, company, circle, overlord
+    public String backstory; // gonna be written into a json file
     private int discordID;
     private int birthDate;
     private int deathDate;
@@ -16,15 +18,16 @@ public class Character {
      * 0: duelStrength
      * 1: azhiStrength
      * 2: militaryPoint
-     * 3: diplomacyPoint
+     * 3: Persuasion
      * 4: stewardshipPoint
      * 5: wisdomPoint
      */
-    private double health;
+    private String imageURL;
+    private double vitality;
     private boolean isAlive;
 
     public Character(int discordID, int birthDate, int deathDate, Country citizenship,
-                     String name, int[] stats, double health) {
+                     String name, int[] stats, double vitality) {
         this.discordID = discordID;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
@@ -34,8 +37,8 @@ public class Character {
         for (int i = 0; i < 6; i++) {
             this.stats[i] = stats[i];
         }
-        this.health = health;
-        this.isAlive = this.health > 0 && Country.GLOBAL_YEAR <= deathDate;
+        this.vitality = vitality;
+        this.isAlive = this.vitality > 0 && Country.GLOBAL_YEAR <= deathDate;
     }
 
     public Character(int discordID, int birthDate, Country citizenship) {
@@ -82,7 +85,6 @@ public class Character {
     public int getAzhiStrength() {
         return stats[1];
     }
-
     public int getMilitaryPoint() {
         return stats[2];
     }
