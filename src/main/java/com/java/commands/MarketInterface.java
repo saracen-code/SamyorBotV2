@@ -1,0 +1,67 @@
+package com.java.commands;
+
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import java.awt.Color;
+import java.util.Random;
+
+public class MarketInterface {
+    private final Random random = new Random();
+
+    public void enterMarket(MessageReceivedEvent event) {
+        EmbedBuilder embed = new EmbedBuilder();
+        embed.setTitle("**❮ The Market of Ghallab ❯**")
+                .setDescription("You step into the sprawling, chaotic bazaar of Ghallab. Merchants cry out their wares, exotic spices fill the air, and the chatter of countless traders surrounds you. Every alley offers a new mystery, a new deal, or perhaps... a new danger.")
+                .setColor(Color.ORANGE);
+
+        event.getChannel().sendMessageEmbeds(embed.build())
+                .setActionRow(
+                        Button.primary("market_deeper", "Venture Deeper"),
+                        Button.secondary("market_crowd", "Follow the Crowds"),
+                        Button.success("market_deals", "Seek the Best Deals"),
+                        Button.danger("market_exit", "Leave the Market")
+                )
+                .queue();
+    }
+
+    public void handleMarketChoices(ButtonInteractionEvent event) {
+        switch (event.getButton().getId()) {
+            case "market_deeper":
+                event.replyEmbeds(getRandomEvent()).addActionRow(Button.primary("market_continue", "Continue Exploring"),
+                        Button.danger("market_exit", "Leave the Market")).queue();
+                break;
+            case "market_crowd":
+                event.replyEmbeds(getRandomEvent()).addActionRow(Button.primary("market_continue", "Continue Exploring"),
+                        Button.danger("market_exit", "Leave the Market")).queue();
+                break;
+            case "market_deals":
+                event.replyEmbeds(getDealEvent()).addActionRow(Button.primary("market_continue", "Continue Exploring"),
+                        Button.danger("market_exit", "Leave the Market")).queue();
+                break;
+            case "market_exit":
+                event.reply("You leave the market, the echoes of trade and chatter fading behind you.").queue();
+                break;
+            case "market_continue":
+                event.replyEmbeds(getRandomEvent()).addActionRow(Button.primary("market_continue", "Continue Exploring"),
+                        Button.danger("market_exit", "Leave the Market")).queue();
+                break;
+        }
+    }
+
+    private EmbedBuilder getRandomEvent() {
+        String[] events = {
+                "A merchant grabs your sleeve, offering rare silks from the East. Do you stop to bargain?",
+                "A fight breaks out over the price of war camels, the crowd forming a circle around the combatants.",
+                "The scent of fresh bread leads you to a baker who claims to sell the softest loaves in Ghallab.",
+                "An old storyteller weaves tales of lost caravans and hidden treasures. Do you stay to listen?",
+                "A shifty-eyed man whispers of a deal too good to be true. Do you risk it?"
+        };
+        return new EmbedBuilder().setDescription(events[random.nextInt(events.length)]).setColor(Color.YELLOW);
+    }
+
+    private EmbedBuilder getDealEvent() {
+        return new EmbedBuilder().setDescription("With a keen eye, you spot the best deals in the market: \n - War Horse: 50 Gold\n - Olive Oil: 10 Gold\n - Fine Silk: 30 Gold").setColor(Color.GREEN);
+    }
+}

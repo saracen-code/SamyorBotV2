@@ -1,0 +1,1 @@
+{"cities":[{"name":"Lucit","saskName":"Lujit","development":2,"hasPort":false,"connections":[]},{"name":"AnotherCity","saskName":"Another Sask","development":5,"hasPort":false,"connections":[]},{"name":"Yishi","saskName":"Yitesh","development":14,"hasPort":false,"connections":[]},{"name":"NewCity","saskName":"New Sask","development":10,"hasPort":true,"connections":[]}]}

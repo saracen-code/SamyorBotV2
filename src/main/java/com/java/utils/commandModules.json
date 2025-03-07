@@ -1,0 +1,77 @@
+{
+  "requests": [
+    {
+      "appendDimension": {
+        "sheetId": 0,
+        "dimension": "ROWS",
+        "length": 5
+      }
+    },
+    {
+      "appendDimension": {
+        "sheetId": 0,
+        "dimension": "COLUMNS",
+        "length": 3
+      }
+    },
+    {
+      "deleteDimension": {
+        "range": {
+          "sheetId": 0,
+          "dimension": "ROWS",
+          "startIndex": 0,
+          "endIndex": 5
+        }
+      }
+    },
+    {
+      "deleteDimension": {
+        "range": {
+          "sheetId": 0,
+          "dimension": "COLUMNS",
+          "startIndex": 1,
+          "endIndex": 3
+        }
+      }
+    },
+    {
+      "insertDimension": {
+        "range": {
+          "sheetId": 0,
+          "dimension": "COLUMNS",
+          "startIndex": 1,
+          "endIndex": 2
+        },
+        "inheritFromBefore": true
+      }
+    },
+    {
+      "insertDimension": {
+        "range": {
+          "sheetId": 0,
+          "dimension": "ROWS",
+          "startIndex": 2,
+          "endIndex": 3
+        },
+        "inheritFromBefore": false
+      }
+    },
+    {
+      "landTaxAssessment": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 1,
+          "endColumnIndex": 2
+        },
+        "cell": {
+          "userEnteredValue": {
+            "formulaValue": "=ABS(landTaxComputation(\"GhallabMarket\"))"
+          }
+        },
+        "fields": "userEnteredValue"
+      }
+    }
+  ]
+}
