@@ -1,0 +1,109 @@
+{
+  "culture_name": "Dabanite",
+  "general_info": {
+    "name": "Sakh-hari",
+    "description": "The Sakh-hari are a proud and honorable desert people, bound by strict commitments and tribal loyalty, who, after unification under the Receiver Mutalâqi, adhere to a doctrine-centered society with a focus on religious duty, historical legacy, and a strong, though distant, sense of community.",
+    "geography": "Daban Desert",
+    "language": "Classical Saskartan",
+    "appearance": {
+      "skin_color": "Darker complexions",
+      "hair_color": "Brown",
+      "eye_color": "Brown"
+    }
+  },
+  "history": {
+    "founding_myths": [
+      "The Sakh-hari believe their ancestry traces back to the Primordial Ones, though scholars debate this origin.",
+      "The Receiver Mutalâqi unified the Sakh-hari tribes and laid the foundation for their religious doctrine."
+    ],
+    "historical_figures": [
+      {
+        "name": "Receiver Mutalâqi",
+        "role": "Unifier of the Sakh-hari",
+        "significance": "Led the unification of the tribes and spread the religious teachings of the One True God."
+      }
+    ],
+    "classes": [
+      {
+        "title": "Ehnis",
+        "seat": "Tahnazade",
+        "role": "WIP"
+      },
+      {
+        "title": "Gelârm",
+        "seat": "Tagelârm",
+        "role": "WIP"
+      }
+    ]
+  },
+  "religion": {
+    "doctrine": "Doctrine-centered, with the belief in the One True God and the teachings of the Receiver Mutalâqi.",
+    "spiritual_order": "Order of Dâwr",
+    "practices": [
+      "Veneration of the One True God",
+      "Studying theology through the Order of Dâwr",
+      "Fulfilling religious duties to ensure unity"
+    ]
+  },
+  "culture": {
+    "values": [
+      "Commitment",
+      "Honour",
+      "Tribal loyalty",
+      "Religious duty"
+    ],
+    "social_structure": {
+      "tribes": [
+        "Tribal affiliations and lineages command local politics.",
+        "Close-knit tribes historically had better relations."
+      ],
+      "leadership": [
+        "The leadership has historically been non-hereditary, with rulers elected from the Order of Dâwr."
+      ]
+    },
+    "arts": {
+      "traditional_art": "Dabanite art is deeply rooted in the desert, depicting the harsh landscapes and spiritual symbols.",
+      "craftsmanship": "Skilled in the creation of practical items, including pottery, textiles, and leatherwork."
+    }
+  },
+  "customs": {
+    "celebrations": [
+      {
+        "title": "Lzed Yewzit / The Solemnity of Nourishment",
+        "description": "A celebration marking the end of Ramadan, where the Sakh-hari come together to give thanks, share meals, and offer prayers of gratitude. It is a time of forgiveness and renewal, focusing on unity and the strengthening of family bonds."
+      },
+      {
+        "title": "Egdam Imtîleq ('hand de atadzehret adhe-hajî)",
+        "description": "The celebration of the birth of the Prophet Muhammad, marked by storytelling, prayers, and communal gatherings. This day is one of joy and reflection, celebrating the life and teachings of the Prophet and his impact on the world."
+      },
+      {
+        "title": "Tahenjirzīn",
+        "description": "The month-long fasting period observed by the Sakh-hari, focusing on spiritual purification, charity, and increased devotion. Each evening, the community breaks their fast together, sharing meals and prayers as a symbol of unity and obedience to God."
+      },
+      {
+        "title": "Ghadîradh",
+        "description": "The Ghadîradh, meaning \"Gathering of the Breath\" is a spiritual Dabanite festivity, where participants come together in quiet contemplation and prayer. This ceremony focuses on deepening one’s connection to the Divine through the practice of breathing exercises, rhythmic recitations of sacred verses, and remembrances of 'Helâghni. It is held during the sacred nights, when the community gathers in a serene space, often near the religious endowments of the southern Asarra. This ceremony is a time of profound peace, where the community becomes unified through shared devotion and the collective remembrance of 'Helâghnî. The Gathering of the Breath is both a personal and communal journey, a path towards spiritual enlightenment and the purification of the soul."
+      }
+    ],
+    "taboos": [
+      "Breaking commitments is seen as dishonorable.",
+      "Disrespecting tribal leaders or ancestors is a serious offense.",
+      "Engaging in deceit or dishonesty, even in minor matters, is forbidden.",
+      "Abandoning one's post or responsibility, especially during times of crisis, is punishable by exile.",
+      "Disregarding the teachings of the Receiver Mutalâqi is considered heresy and can lead to social ostracism.",
+      "Unprovoked violence against a fellow Sakh-hari is seen as a betrayal of the community's trust.",
+      "Allowing personal emotions to cloud judgment in matters of duty or honor is frowned upon.",
+      "Intermarriage between rival tribes is considered a betrayal and is prohibited in most cases.",
+      "Showing affection or close friendship too openly, especially with outsiders, is discouraged as it undermines the sense of duty.",
+      "Seeking personal glory or fame at the expense of the tribe or community is seen as selfish and dishonorable.",
+      "Failing to properly honor the dead or forgetting ancestral rites is a grave offense.",
+      "Misusing or wasting resources, especially water, is seen as disrespecting the harsh desert environment."
+    ]
+  },
+  "legends": [
+    {
+      "title": "The Lost City of Qahtiba",
+      "description": "Rumors claim that Qahtiba, the first capital of the Tagelârm, still exists somewhere in the desert, although many believe it is either a legend or lost to history."
+    }
+  ]
+}

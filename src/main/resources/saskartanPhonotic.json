@@ -1,0 +1,14 @@
+[
+  {
+    "rule": "s/sh/_t//",
+    "description": "Change s to ʃ when before \"t\"."
+  },
+  {
+    "rule": "U/I/V_V",
+    "description": "Change unvoiced consonants to voiced when between two vowels."
+  },
+  {
+    "rule": "g/gg/_V",
+    "description": "Make g geminate when between two vowels."
+  }
+]
