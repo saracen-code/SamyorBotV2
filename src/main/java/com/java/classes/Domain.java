@@ -3,14 +3,14 @@ import java.util.List;
 
 // Domain class managing buildings
 class Domain {
-    private Character character;
+    private Player character;
     private boolean isKingDomain = character instanceof King;
     private List<City> cityList;
 
-    public Domain(Character character) {
+    public Domain(Player character) {
         this.character = character;
     }
-    public Domain(Character character, List<City> cityList) {
+    public Domain(Player character, List<City> cityList) {
         this.character = character;
         this.cityList = cityList;
     }
@@ -51,7 +51,7 @@ class Domain {
             System.out.println("- " + b.getName() + " (" + b.getType() + ") - Cost: " + b.getCost());
         }
     } */
-    public Character getCharacter() {return this.character;}
+    public Player getCharacter() {return this.character;}
 }
 
 

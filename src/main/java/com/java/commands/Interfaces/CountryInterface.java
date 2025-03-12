@@ -44,9 +44,12 @@ public class CountryInterface extends ListenerAdapter implements WorkingCommand 
                 // Step 2: Deduct gold and show census if they can afford it
                 CountryInterface.conductCensus(event);
                 break;
+                /*
             case "call_tax_interface":
                 callTaxInterface(event);
                 break;
+
+                 */
             case "call_diplomacy_interface":
                 callDiplomacyInterface(event);
                 break;
@@ -94,10 +97,13 @@ public class CountryInterface extends ListenerAdapter implements WorkingCommand 
                 .queue();
     }
 
+    /*
+
     public static void callTaxInterface(ButtonInteractionEvent event) {
         // Calling existing tax interface
         TaxationInterface.sendTaxationIntro(event.getChannel()); // Assuming sendTaxInterface is your existing method for taxes
     }
+     */
 
 
     public static void callDiplomacyInterface(ButtonInteractionEvent event) {

@@ -58,7 +58,7 @@ public class WeightedWeb {
     }
 
     // Traverse map for a Character, checking if they have enough weight capacity
-    public void traverseMap(Character character, City start) {
+    public void traverseMap(Player character, City start) {
         if (!adjacencyMap.containsKey(start)) {
             System.out.println("Starting city not found in the network.");
             return;

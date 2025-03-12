@@ -2,6 +2,7 @@ package com.java.classes;
 
 import com.google.api.services.sheets.v4.Sheets;
 import com.java.utils.SheetsQuickstart;
+import org.apache.http.annotation.Contract;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -44,8 +45,34 @@ public class Player {
     private double vitality;
     private boolean isAlive;
 
+    public Player(int id, String charName, String type, int fertility, int personalFunds, int reputation, long discordID,
+                  int birthDate, int deathDate, int duelStrength, int azhiStrength, int militaryPoint, int persuasion,
+                  int stewardshipPoint, int wisdomPoint, int vitality, boolean isAlive) {
+        this.ID = ID;
+        this.charName = charName;
+        this.investmentReputation = reputation;
+        this.fertility = fertility;
+        this.personalFunds = personalFunds;
+        this.investmentReputation = investmentReputation;
+        this.discordID = discordID;
+        this.birthDate = birthDate;
+        this.deathDate = deathDate;
+        this.stats[0] = duelStrength;
+        this.stats[1] = azhiStrength;
+        this.stats[2] = militaryPoint;
+        this.stats[3] = persuasion;
+        this.stats[4] = stewardshipPoint;
+        this.stats[5] = wisdomPoint;
+        this.vitality = vitality;
+        this.isAlive = isAlive;
+    }
+
+    public Player() {
+
+    }
+
     ///  CONSTRUCTORS
-    public void Avatar() {
+    public void Player() {
         Random random = new Random();
         int newID;
 

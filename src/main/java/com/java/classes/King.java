@@ -1,16 +1,22 @@
 package com.java.classes;
 import java.util.Random;
 
-public class King extends Character {
-    private DLNode<java.lang.Character> family = new DLNode<>();
+public class King extends Player {
+    private DLNode<Player> family = new DLNode<>();
     private int fertility;
-    private Character successor;
-    public King(int discordID, int birthDate, int deathDate, Country citizenship,
-                String name, int[] stats, double health) {
-        super(discordID, birthDate, deathDate, citizenship, name, stats, health);
-        Random random = new Random();
-        this.fertility = random.nextInt(8);
+    private Player successor;
+    int successorID;
+
+    public King(int ID, String charName, String type, int fertility, int successorID, int personalFunds, int investmentReputation,
+                              long discordID, int birthDate, int deathDate, int duelStrength, int azhiStrength, int militaryPoint,
+                              int persuasion, int stewardshipPoint, int wisdomPoint, int vitality, boolean isAlive) {
+
+        super(ID, charName, type, fertility, personalFunds, investmentReputation, discordID, birthDate, deathDate,
+                duelStrength, azhiStrength, militaryPoint, persuasion, stewardshipPoint, wisdomPoint, vitality, isAlive);
+        this.successorID = successorID;
+
     }
+
     // for testing
     public King() {
         super();

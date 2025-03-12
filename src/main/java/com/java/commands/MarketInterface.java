@@ -1,10 +1,12 @@
 package com.java.commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.awt.Color;
+import java.util.Collection;
 import java.util.Random;
 
 public class MarketInterface {
@@ -50,7 +52,7 @@ public class MarketInterface {
         }
     }
 
-    private EmbedBuilder getRandomEvent() {
+    private Collection<? extends MessageEmbed> getRandomEvent() {
         String[] events = {
                 "A merchant grabs your sleeve, offering rare silks from the East. Do you stop to bargain?",
                 "A fight breaks out over the price of war camels, the crowd forming a circle around the combatants.",
@@ -58,10 +60,10 @@ public class MarketInterface {
                 "An old storyteller weaves tales of lost caravans and hidden treasures. Do you stay to listen?",
                 "A shifty-eyed man whispers of a deal too good to be true. Do you risk it?"
         };
-        return new EmbedBuilder().setDescription(events[random.nextInt(events.length)]).setColor(Color.YELLOW);
+        return (Collection<? extends MessageEmbed>) new EmbedBuilder().setDescription(events[random.nextInt(events.length)]).setColor(Color.YELLOW);
     }
 
-    private EmbedBuilder getDealEvent() {
-        return new EmbedBuilder().setDescription("With a keen eye, you spot the best deals in the market: \n - War Horse: 50 Gold\n - Olive Oil: 10 Gold\n - Fine Silk: 30 Gold").setColor(Color.GREEN);
+    private Collection<? extends MessageEmbed> getDealEvent() {
+        return (Collection<? extends MessageEmbed>) new EmbedBuilder().setDescription("With a keen eye, you spot the best deals in the market: \n - War Horse: 50 Gold\n - Olive Oil: 10 Gold\n - Fine Silk: 30 Gold").setColor(Color.GREEN);
     }
 }

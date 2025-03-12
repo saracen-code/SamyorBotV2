@@ -23,8 +23,8 @@ public class Military {
     private int discipline;
     private int veteranship;
     private int contentment;
-    private Character commander;
-    private Character admiral;
+    private Player commander;
+    private Player admiral;
 
     public Country getCountry() {
         return country;
@@ -45,10 +45,10 @@ public class Military {
     public int getContentment() {
         return contentment;
     }
-    public Character getCommander() {
+    public Player getCommander() {
         return commander;
     }
-    public Character getAdmiral() {
+    public Player getAdmiral() {
         return admiral;
     }
 
@@ -61,7 +61,7 @@ public class Military {
     }
     public void newCommander() {
         if (lastCommanderRecruit - Country.GLOBAL_YEAR > 6) {
-            Character character = new Character(country.getCulture());
+            Player character = new Player(); // add culture getting feature
             this.commander = character;
             this.lastCommanderRecruit = Country.GLOBAL_YEAR;
         } else {

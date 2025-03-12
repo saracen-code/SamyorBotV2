@@ -4,8 +4,6 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;
-import com.java.utils.GoogleSheetsCommands;
-import com.java.utils.GoogleSheetsService;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -127,6 +125,8 @@ public class Country {
         }
     }
 
+    /*
+
     // Static initializer method to initialize country fields from the Google Sheet
     public void initializer() throws IOException, GeneralSecurityException {
         GoogleSheetsService googleSheetsService = new GoogleSheetsService(
@@ -180,6 +180,8 @@ public class Country {
         }
 
     }
+
+     */
 
 
 }

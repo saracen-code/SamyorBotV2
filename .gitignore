@@ -1,3 +1,4 @@
 config.json
 src/main/resources/credentials.json
 tokens/
+src/main/resources/authentication.json
