@@ -1,5 +1,5 @@
 V=aeiou
-C=ptcqbdgmnlrhs     
+C=ptcqbdgmnlrhs
 F=ie
 B=ou
 S=ptc
