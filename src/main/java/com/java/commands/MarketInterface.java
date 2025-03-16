@@ -2,23 +2,31 @@ package com.java.commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.awt.Color;
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.Random;
 
-public class MarketInterface {
+public class MarketInterface implements WorkingCommand {
     private final Random random = new Random();
 
-    public void enterMarket(MessageReceivedEvent event) {
+    @Override
+    public void execute(MessageReceivedEvent event) throws FileNotFoundException {
+        enterMarket(event.getChannel());
+
+    }
+
+    public void enterMarket(MessageChannel channel) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle("**❮ The Market of Ghallab ❯**")
                 .setDescription("You step into the sprawling, chaotic bazaar of Ghallab. Merchants cry out their wares, exotic spices fill the air, and the chatter of countless traders surrounds you. Every alley offers a new mystery, a new deal, or perhaps... a new danger.")
                 .setColor(Color.ORANGE);
 
-        event.getChannel().sendMessageEmbeds(embed.build())
+        channel.sendMessageEmbeds(embed.build())
                 .setActionRow(
                         Button.primary("market_deeper", "Venture Deeper"),
                         Button.secondary("market_crowd", "Follow the Crowds"),
