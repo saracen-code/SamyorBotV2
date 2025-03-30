@@ -47,8 +47,8 @@ public class CharacterCreation implements ICommand {
         EmbedBuilder embed = getCharPage(1);
         channel.sendMessageEmbeds(embed.build())
                 .setActionRow(
-                        Button.primary("help_prev", "◀️ Previous").asDisabled(),
-                        Button.primary("help_next", "Next ▶️")
+                        Button.primary("char_prev", "◀️ Previous").asDisabled(),
+                        Button.primary("char_next", "Next ▶️")
                 )
                 .queue(message -> {
                     culturePageMap.put(message.getIdLong(), 1);
