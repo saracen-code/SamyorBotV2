@@ -24,6 +24,8 @@ public class Ping implements ICommand {
     }
 
     @Override
-    public void execute(SlashCommandInteractionEvent event) {event.getChannel().sendMessage("Pong!").queue();
+    public void execute(SlashCommandInteractionEvent event) {
+        event.reply("");
+        event.getChannel().sendMessage("Pong!").queue();
     }
 }

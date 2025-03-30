@@ -36,6 +36,7 @@ public class Help implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
+        event.reply("");
         sendHelp(event.getChannel());
     }
 

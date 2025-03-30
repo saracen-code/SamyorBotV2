@@ -36,10 +36,12 @@ public class CharacterCreation implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
+        event.reply("");
         sendCharCreation(event.getChannel());
     }
 
     public void execute(ButtonInteractionEvent event) {
+        event.reply("");
         sendCharCreation(event.getChannel());
     }
 

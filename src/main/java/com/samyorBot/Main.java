@@ -43,18 +43,8 @@ public class Main extends ListenerAdapter {
             CommandManager manager = new CommandManager();
             // list commands
             manager.add(new Help());
-            manager.add(new PhoMo());
             manager.add(new Ping());
             manager.add(new CharacterInterface());
-            manager.add(new CharacterCreation());
-            manager.add(new CountryInterface());
-            manager.add(new CityInterface());
-            manager.add(new DiplomacyInterface());
-            manager.add(new InvestmentInterface());
-            manager.add(new MarketInterface());
-            manager.add(new ScienceInterface());
-            manager.add(new TaxationInterface());
-            manager.add(new TravelInterface());
             jda.addEventListener(manager);
 
             // load characters

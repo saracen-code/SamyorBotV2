@@ -49,6 +49,7 @@ public class CharacterInterface implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
+        event.reply("");
         sendCharacterMenu(event.getChannel());
     }
 
