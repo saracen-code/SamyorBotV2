@@ -134,7 +134,7 @@ public class CharacterCreation implements ICommand {
                 .setActionRow(
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
                         Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES),
-                        newPage == TOTAL_PAGES ? Button.success("char_confirm", "✅ Confirm") : null
+                        Button.success("char_confirm", "✅ Confirm").withDisabled(newPage < 10)
                 ).queue();
     }
 }
