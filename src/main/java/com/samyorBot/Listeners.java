@@ -26,7 +26,7 @@ public class Listeners extends ListenerAdapter {
             /// HELP BUTTONS
             case "help_prev", "help_next":
                 Help.handleButtonInteraction(event);
-            case "char_prev", "char_next":
+            case "char_prev", "char_next", "char_confirm", :
                 CharacterCreation.handleButtonInteraction(event);
                 ///  TRAVEL BUTTONS
             case "travel_back", "move_city", "search_itinerary", "travel_nearby", "add_mercenaries", "add_armies",

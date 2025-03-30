@@ -139,3 +139,4 @@ public class CharacterCreation implements ICommand {
                 ).queue();
     }
 }
+
