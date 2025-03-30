@@ -46,6 +46,7 @@ public class Main extends ListenerAdapter {
             manager.add(new PhoMo());
             manager.add(new Ping());
             manager.add(new CharacterInterface());
+            manager.add(new CharacterCreation());
             manager.add(new CountryInterface());
             manager.add(new CityInterface());
             manager.add(new DiplomacyInterface());
