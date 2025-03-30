@@ -40,7 +40,7 @@ public class CharacterCreation implements ICommand {
     }
 
     public void execute(ButtonInteractionEvent event) {
-        sendCharCreation(event.getChannel());
+        handleButtonInteraction(event);
     }
 
     private void sendCharCreation(MessageChannel channel) {
@@ -65,69 +65,55 @@ public class CharacterCreation implements ICommand {
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 1: CULTURE__", "", false)
                         .addField("The Sebeh", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Ehkiyas", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Siynimekiy", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Nrayephet", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Knazit", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Egyi-an", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Nyiteriym", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Arunnaya", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Sakh'hari", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Efniredar", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Iymkinethuy", "Lorem Ipsum Dolor et Simet.", false);
+                        .addField("The Ehkiyas", "Lorem Ipsum Dolor et Simet.", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 2:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 2: NAME__", "", false)
-                        .addField("Randomize Sask", "Obtain a random name by culture.", false)
-                        .addField("Browse Names", "🚧 Browse a list of names by Saskartan culture.", false)
-                        .addField("Manual Input", "🚧 Manually input your character's name.", false);
+                        .addField("Randomize Sask", "Obtain a random name by culture.", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 3:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 3: START LOCATION__", "", false)
-                        .addField("Write", "Write the name of a city to select it.", false);
+                        .addField("__PART 3: START LOCATION__", "", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 4:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 4: BIRTH DATE__", "", false)
-                        .addField("Write", "Write your birth date.", false);
+                        .addField("__PART 4: BIRTH DATE__", "", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 5:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 5: DESCRIPTION (OPTIONAL)__", "", false)
-                        .addField("Write", "Write a character description or backstory (optional).", false);
+                        .addField("__PART 5: DESCRIPTION (OPTIONAL)__", "", false);
                 FunFacts.addFunFacts(embed);
+                break;
             case 6:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 5: SKILL DESCRIPTION__", "", false)
-                        .addField("Write", "Write a character's skill backstory description.", false);
+                        .addField("__PART 6: SKILL DESCRIPTION__", "", false);
                 FunFacts.addFunFacts(embed);
+                break;
             case 7:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 5: DESCRIPTION (OPTIONAL)__", "", false)
-                        .addField("Write", "Write a character's skill backstory description.", false);
+                        .addField("__PART 7: DESCRIPTION (OPTIONAL)__", "", false);
                 FunFacts.addFunFacts(embed);
+                break;
             case 8:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 5: PORTRAIT (OPTIONAL)__", "", false)
-                        .addField("Write", "Provide the URL for your character's portrait.", false);
+                        .addField("__PART 8: PORTRAIT (OPTIONAL)__", "", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 9:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 5: FAMILY__", "", false)
-                        .addField("Setup", "Write down the IDs of already-created members in your character's family relations.", false);
+                        .addField("__PART 9: FAMILY__", "", false);
                 FunFacts.addFunFacts(embed);
+                break;
             case 10:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__COMPLETED__", "", false)
-                        .addField("Setup", "CHARACTER CREATION IS COMPLETE, YOUR CHARACTER HAS ID: ___", false);
+                        .addField("__COMPLETED__", "CHARACTER CREATION IS COMPLETE, YOUR CHARACTER HAS ID: ___", false);
                 FunFacts.addFunFacts(embed);
+                break;
         }
         return embed;
     }
@@ -142,7 +128,9 @@ public class CharacterCreation implements ICommand {
         culturePageMap.put(messageId, newPage);
         EmbedBuilder updatedEmbed = new CharacterCreation().getCharPage(newPage);
 
-        event.editMessageEmbeds(updatedEmbed.build())
+        event.deferEdit().queue(); // Ensures interaction is acknowledged
+
+        event.getMessage().editMessageEmbeds(updatedEmbed.build())
                 .setActionRow(
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
                         Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
