@@ -149,7 +149,7 @@ public class CharacterInterface implements ICommand {
     }
 
     public static void sendCharacterCreation(ButtonInteractionEvent event) {
-        CharacterCreation.execute(event);
+        new CharacterCreation().execute(event);
     }
 
 

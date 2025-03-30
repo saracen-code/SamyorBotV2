@@ -39,12 +39,12 @@ public class CharacterCreation implements ICommand {
         sendCharCreation(event.getChannel());
     }
 
-    public static void execute(ButtonInteractionEvent event) {
+    public void execute(ButtonInteractionEvent event) {
         sendCharCreation(event.getChannel());
     }
 
-    private static void sendCharCreation(MessageChannel channel) {
-        EmbedBuilder embed = getHelpPage(1);
+    private void sendCharCreation(MessageChannel channel) {
+        EmbedBuilder embed = getCharPage(1);
         channel.sendMessageEmbeds(embed.build())
                 .setActionRow(
                         Button.primary("help_prev", "◀️ Previous").asDisabled(),
@@ -55,7 +55,7 @@ public class CharacterCreation implements ICommand {
                 });
     }
 
-    private static EmbedBuilder getHelpPage(int page) {
+    private EmbedBuilder getCharPage(int page) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setColor(commandColor);
         embed.setFooter("Use ◀️/▶️ buttons to navigate.");
@@ -135,17 +135,17 @@ public class CharacterCreation implements ICommand {
     public static void handleButtonInteraction(ButtonInteractionEvent event) {
         long messageId = event.getMessage().getIdLong();
         int currentPage = culturePageMap.getOrDefault(messageId, 1);
-        int newPage = event.getComponentId().equals("help_next") ? currentPage + 1 : currentPage - 1;
+        int newPage = event.getComponentId().equals("char_next") ? currentPage + 1 : currentPage - 1;
 
         if (newPage < 1 || newPage > TOTAL_PAGES) return;
 
         culturePageMap.put(messageId, newPage);
-        EmbedBuilder updatedEmbed = new CharacterCreation().getHelpPage(newPage);
+        EmbedBuilder updatedEmbed = new CharacterCreation().getCharPage(newPage);
 
         event.editMessageEmbeds(updatedEmbed.build())
                 .setActionRow(
-                        Button.primary("help_prev", "◀️ Previous").withDisabled(newPage == 1),
-                        Button.primary("help_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
+                        Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
+                        Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
                 )
                 .queue();
     }
