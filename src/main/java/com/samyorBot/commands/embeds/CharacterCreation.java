@@ -48,7 +48,8 @@ public class CharacterCreation implements ICommand {
         channel.sendMessageEmbeds(embed.build())
                 .setActionRow(
                         Button.primary("char_prev", "◀️ Previous").asDisabled(),
-                        Button.primary("char_next", "Next ▶️")
+                        Button.primary("char_next", "Next ▶️"),
+                        Button.success("char_confirm", "✅ Confirm").asDisabled()
                 )
                 .queue(message -> {
                     culturePageMap.put(message.getIdLong(), 1);
@@ -134,7 +135,7 @@ public class CharacterCreation implements ICommand {
                 .setActionRow(
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
                         Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES),
-                        Button.success("char_confirm", "✅ Confirm").withDisabled(newPage < 10)
+                        Button.success("char_confirm", "✅ Confirm").withDisabled(newPage != TOTAL_PAGES)
                 ).queue();
     }
 }
