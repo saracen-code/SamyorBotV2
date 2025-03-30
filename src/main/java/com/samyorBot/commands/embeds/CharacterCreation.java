@@ -21,7 +21,7 @@ public class CharacterCreation implements ICommand {
 
     @Override
     public String getName() {
-        return "Character Creation";
+        return "charcreate";
     }
 
     @Override
