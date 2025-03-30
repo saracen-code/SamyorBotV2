@@ -142,7 +142,7 @@ public class CharacterCreation implements ICommand {
 
         event.editMessageEmbeds(updatedEmbed.build())
                 .setActionRow(
-                        Button.primary("char_confirm", "✅ Confirm"),
+                        Button.primary("char_confirm", "✅ Confirm").withDisabled(newPage == TOTAL_PAGES),
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
                         Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
                 )
