@@ -81,7 +81,7 @@ public class CharacterCreation implements ICommand {
                 break;
             case 4:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__PART 4: BIRTH DATE__", "", false);
+                        .addField("__PART 4: BIRTH DATE__", "select", false);
                 FunFacts.addFunFacts(embed);
                 break;
             case 5:
