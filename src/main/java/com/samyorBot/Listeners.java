@@ -1,7 +1,7 @@
 package com.samyorBot;
 
 import com.samyorBot.commands.*;
-import com.samyorBot.commands.embeds.TaxationInterface;
+import com.samyorBot.commands.embeds.*;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
@@ -26,6 +26,8 @@ public class Listeners extends ListenerAdapter {
             /// HELP BUTTONS
             case "help_prev", "help_next":
                 Help.handleButtonInteraction(event);
+            case "char_prev", "char_next":
+                CharacterCreation.handleButtonInteraction(event);
                 ///  TRAVEL BUTTONS
             case "travel_back", "move_city", "search_itinerary", "travel_nearby", "add_mercenaries", "add_armies",
                  "add_caravans":

@@ -14,7 +14,9 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
 import java.awt.Color;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CharacterInterface implements ICommand {
     public static Color interfaceColor = Color.decode("#777311");

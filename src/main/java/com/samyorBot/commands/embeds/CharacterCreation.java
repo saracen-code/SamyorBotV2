@@ -4,12 +4,12 @@ import com.samyorBot.ICommand;
 import com.samyorBot.data.FunFacts;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
-import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,7 +111,7 @@ public class CharacterCreation implements ICommand {
                 break;
             case 10:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
-                        .addField("__COMPLETED__", "CHARACTER CREATION IS COMPLETE, YOUR CHARACTER HAS ID: ___", false);
+                        .addField("CONFIRM", "Confirm the creation of your character.", false);
                 FunFacts.addFunFacts(embed);
                 break;
         }
@@ -133,8 +133,8 @@ public class CharacterCreation implements ICommand {
         event.getMessage().editMessageEmbeds(updatedEmbed.build())
                 .setActionRow(
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
-                        Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
-                )
-                .queue();
+                        Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES),
+                        newPage == TOTAL_PAGES ? Button.success("char_confirm", "✅ Confirm") : null
+                ).queue();
     }
 }
