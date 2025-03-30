@@ -36,12 +36,12 @@ public class CharacterCreation implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        event.reply("");
+        event.reply(".");
         sendCharCreation(event.getChannel());
     }
 
     public void execute(ButtonInteractionEvent event) {
-        event.reply("");
+        event.reply(".");
         sendCharCreation(event.getChannel());
     }
 
@@ -49,9 +49,9 @@ public class CharacterCreation implements ICommand {
         EmbedBuilder embed = getCharPage(1);
         channel.sendMessageEmbeds(embed.build())
                 .setActionRow(
+                        Button.primary("char_confirm", "✅ Confirm").asDisabled(),
                         Button.primary("char_prev", "◀️ Previous").asDisabled(),
-                        Button.primary("char_next", "Next ▶️"),
-                        Button.primary("char_confirm", "✅ Confirm").asDisabled()
+                        Button.primary("char_next", "Next ▶️")
                 )
                 .queue(message -> {
                     culturePageMap.put(message.getIdLong(), 1);
@@ -67,18 +67,17 @@ public class CharacterCreation implements ICommand {
             case 1:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 1: CULTURE__", "", false)
-                        .addField("The Sebeh", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Ehkiyas", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Siynimekiy", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Nrayephet", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Knazit", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Egyi-an", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Nyiteriym", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Arunnaya", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Sakh'hari", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Efniredar", "Lorem Ipsum Dolor et Simet.", false)
-                        .addField("The Iymkinethuy", "Lorem Ipsum Dolor et Simet.", false);
-                FunFacts.addFunFacts(embed);
+                        .addField("The Sebeh", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Ehkiyas", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Siynimekiy", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Nrayephet", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Knazit", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Egyi-an", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Nyiteriym", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Arunnaya", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Sakh'hari", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Efniredar", "Lorem Ipsum Dolor et Simet.", true)
+                        .addField("The Iymkinethuy", "Lorem Ipsum Dolor et Simet.", true);
                 break;
             case 2:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
@@ -86,55 +85,46 @@ public class CharacterCreation implements ICommand {
                         .addField("Randomize Sask", "Obtain a random name by culture.", false)
                         .addField("Browse Names", "🚧 Browse a list of names by Saskartan culture.", false)
                         .addField("Manual Input", "🚧 Manually input your character's name.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 3:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 3: START LOCATION__", "", false)
                         .addField("Write", "Write the name of a city to select it.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 4:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 4: BIRTH DATE__", "", false)
                         .addField("Write", "Write your birth date.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 5:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 5: DESCRIPTION (OPTIONAL)__", "", false)
                         .addField("Write", "Write a character description or backstory (optional).", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 6:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 5: SKILL DESCRIPTION__", "", false)
                         .addField("Write", "Write a character's skill backstory description.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 7:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 5: DESCRIPTION (OPTIONAL)__", "", false)
                         .addField("Write", "Write a character's skill backstory description.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 8:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 5: PORTRAIT (OPTIONAL)__", "", false)
                         .addField("Write", "Provide the URL for your character's portrait.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 9:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__PART 5: FAMILY__", "", false)
                         .addField("Setup", "Write down the IDs of already-created members in your character's family relations.", false);
-                FunFacts.addFunFacts(embed);
                 break;
             case 10:
                 embed.setTitle("❂ **Samyor's Character Creator 1.0** ❂")
                         .addField("__COMPLETED__", "", false)
                         .addField("Setup", "CHARACTER CREATION IS COMPLETE, YOUR CHARACTER HAS ID: ___", false);
-                FunFacts.addFunFacts(embed);
                 break;
         }
         return embed;
@@ -152,9 +142,9 @@ public class CharacterCreation implements ICommand {
 
         event.editMessageEmbeds(updatedEmbed.build())
                 .setActionRow(
+                        Button.primary("char_confirm", "✅ Confirm"),
                         Button.primary("char_prev", "◀️ Previous").withDisabled(newPage == 1),
-                        Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES),
-                        Button.success("char_confirm", "✅ Confirm").withDisabled(newPage != TOTAL_PAGES)
+                        Button.primary("char_next", "Next ▶️").withDisabled(newPage == TOTAL_PAGES)
                 )
                 .queue();
     }
